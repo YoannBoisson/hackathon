@@ -1,0 +1,44 @@
+#hint-container {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  min-width: calc(200px + 36px);
+  max-width: calc(500px + 36px);
+  z-index: 9999;
+  overflow: hidden;
+  background: rgba(34, 45, 65, 47);
+}
+
+#hint-container section {
+  display: flex;
+  flex-direction: column;
+}
+
+#hint-container section h3 {
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.item-result {
+  display: flex;
+}
+
+.item-result:hover {
+  background: #607d8b;
+}
+
+p {
+  margin-bottom: 1px;
+}
+
+img {
+  margin: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  #hint-container {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+  }
+}
