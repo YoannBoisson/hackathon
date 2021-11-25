@@ -1,8 +1,5 @@
-
 function HomePage() {
-  return (
-
-  )
+  return <h1>Bienvenu sur la page d'accueil</h1>;
 }
 
 export default HomePage;
