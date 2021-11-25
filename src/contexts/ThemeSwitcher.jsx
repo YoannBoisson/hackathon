@@ -6,7 +6,7 @@ function ThemeSwitcher() {
  const { toggleTheme } = useContext(ThemeContext);
 
    return (
-       <input type="checkbox" onChange={toggleTheme} />
+       <input type="checkbox" className="check-theme" onChange={toggleTheme} />
    );
 }
 

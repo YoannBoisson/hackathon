@@ -1,6 +1,7 @@
 import Searchbar from "./components/SearchBar/Searchbar";
 import Navbar from "./components/Navbar";
 import Router from "./routes";
+import EmojiWheel from "./components/EmojiWheel/EmojiWheel";
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="app-container">
       <Searchbar />
       <Navbar />
+      <EmojiWheel />
       <Router />
     </div>
   );
