@@ -24,8 +24,9 @@ function Searchbar() {
   });
 
   return (
-    <form action="">
+    <form className="searchform" action="">
       <input
+        className="searchinput"
         type="search"
         required
         id="searchbar"
@@ -33,7 +34,7 @@ function Searchbar() {
         onChange={handleSearch}
         style={theme}
       />
-      <SearchIcon className="fa"/>
+      <SearchIcon className="fa" />
       {search && <SearchResult search={search} />}
     </form>
   );

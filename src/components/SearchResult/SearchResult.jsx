@@ -76,8 +76,8 @@ function SearchResult(props) {
           //   }}
           // >
           <div className="item-result">
-            <img src={album.cover_small} alt={album.id} />
-            <p>{album.title}</p>
+            <img className="picture-result" src={album.cover_small} alt={album.id} />
+            <p className="display-result">{album.title}</p>
           </div>
           // </Link>
         ))}
@@ -93,8 +93,8 @@ function SearchResult(props) {
           //   }}
           // >
           <div className="item-result">
-            <img src={artiste.picture_small} alt={artiste.id} />
-            <p>{artiste.name}</p>
+            <img className="picture-result" src={artiste.picture_small} alt={artiste.id} />
+            <p className="display-result">{artiste.name}</p>
           </div>
           // </Link>
         ))}
@@ -110,8 +110,8 @@ function SearchResult(props) {
           //   }}
           // >
           <div className="item-result">
-            <img src={track.album.cover_small} alt={track.id} />
-            <p>{track.title}</p>
+            <img className="picture-result" src={track.album.cover_small} alt={track.id} />
+            <p className="display-result">{track.title}</p>
           </div>
           // </Link>
         ))}
