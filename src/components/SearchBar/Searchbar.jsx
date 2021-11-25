@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import SearchResult from "../SearchResult/SearchResult";
-import ThemeContext from "../../contexts/themeContext";
+import ThemeContext from "../../contexts/ThemeContext";
 import "./searchbar.css";
 
 function Searchbar() {
@@ -24,8 +24,9 @@ function Searchbar() {
   });
 
   return (
-    <form action="">
+    <form className="searchform" action="">
       <input
+        className="searchinput"
         type="search"
         required
         id="searchbar"
