@@ -42,12 +42,19 @@ const theme = createTheme();
 
 export default function SignIn() {
   const { setCurrentInfoUser } = useContext(InfoUserContext);
-  const { setCurrentAffConnexion } = useContext(PagesAffContext);
+  const { setCurrentAffConnexion,
+     setCurrentAffInscription,
+      setRedirectHome,
+       redirectHome,
+        setCurrentAffDescription
+       } = useContext(PagesAffContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [users, setUsers] = useState([]);
   const [connexion, setConnexion] = useState(false);
   const [id, setId] = useState(0);
+  const [trueUsername, setTrueUsername] = useState('');
+  const [truePassword, setTruePassword] = useState('');
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -57,6 +64,10 @@ export default function SignIn() {
       password: data.get('password'),
     });
   };
+
+  setCurrentAffConnexion(true);
+  setCurrentAffInscription(false);
+  
 
   function handleClickSignIn() {
     axios
@@ -75,10 +86,10 @@ export default function SignIn() {
           setConnexion(true);
           setId(user.id);
         } else {
-          return console.log('Le mot de passe est faux');
+          return setTruePassword('mot de passe');
         }
       } else {
-        return console.log('Le username est faux');
+        return setTrueUsername('username');
       }
     });
   }, [users]);
@@ -90,22 +101,43 @@ export default function SignIn() {
         .then((res) => {
           // permet de transmettre à items la réponse de l'API grâce à "setState"
           setCurrentInfoUser(res.data);
+          setCurrentAffConnexion(true);
+          setCurrentAffInscription(true);
+          setRedirectHome(!redirectHome);
+          setCurrentAffDescription(true);
         }); // si pages ou apiFilter change on éxecute le useEffect
-      alert('connecté');
-    } else {
-      console.log('mauvais');
-    }
+      alert('connecté');    
+    } /* else {
+      if(username && password)
+      {
+        if(trueUsername && truePassword)
+        {
+          return alert(`Le mot de passe et le username sont faux !`);
+        } else
+        if(trueUsername)
+        {
+          return alert(`Le username est faux !`);
+        } else
+        if(truePassword)
+        {
+          return alert(`Le password est faux !`);
+        }
+      } 
+    }*/
   }, [connexion]);
 
   return (
     <div>
-      <Button
+      <NavLink to="/">
+        <Button
         onClick={() => {
-          setCurrentAffConnexion(false); // modification de la valeur aff
+          setCurrentAffInscription(false);
+          setCurrentAffConnexion(false);
         }}
-      >
-        <NavLink to="/"><ArrowBackOutlinedIcon fontSize="large" /></ NavLink>
-      </Button>
+        >
+          <ArrowBackOutlinedIcon fontSize="large" />
+        </Button>
+      </ NavLink>
 
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs" sx={{ background: 'white' }}>

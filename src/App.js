@@ -7,8 +7,9 @@ import ThemeSwitcher from './contexts/ThemeSwitcher';
 function App() {
   return (
     <div className="app-container">
-      <Searchbar />
+      <ThemeSwitcher />
       <Navbar />
+      <Searchbar />
       <ThemeSwitcher />
       <Router />
     </div>

@@ -20,10 +20,11 @@ import PagesAffContext from '../contexts/PagesAffContext';
 const theme = createTheme();
 
 export default function SignUp() {
-  const { setCurrentAffConnexion } = useContext(PagesAffContext);
+  const { setCurrentAffConnexion, setCurrentAffInscription, setRedirectHome, redirectHome } = useContext(PagesAffContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+/*   const [champsRempli, setChampsRempli] = useState(''); */
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,15 +36,24 @@ export default function SignUp() {
     });
   };
 
+  setCurrentAffInscription(true);
+  setCurrentAffConnexion(false);
+
   function handleClick(e) {
     e.preventDefault();
+/*     let champsRempliFonction = '' */
     const user = {
       email,
       username,
       password,
     };
-    console.log(user);
-    axios
+/*     !email && (champsRempliFonction += champsRempliFonction + 'email');
+    !username && (champsRempliFonction += champsRempliFonction + 'username');
+    !password && (champsRempliFonction += champsRempliFonction + 'password');
+    setChampsRempli(champsRempliFonction); */
+    if(email && username && password)
+    {
+      axios
       .post(`http://localhost:3005/users`, user)
       .then((response) => {
         console.log(response);
@@ -51,17 +61,24 @@ export default function SignUp() {
       .catch((error) => {
         console.log(error);
       });
-  }
+      setCurrentAffConnexion(true);
+      setRedirectHome(!redirectHome); 
+    }else{
+      alert(`Les champs ne sont pas tous rempli`)
+    }
+}
 
   return (
     <div>
-      <Button
+      <Link to="/" ><Button
         onClick={() => {
-          setCurrentAffConnexion(false); // modification de la valeur aff
+          setCurrentAffInscription(false);
+          setCurrentAffConnexion(false);
         }}
-      >
-        <Link to="/" ><ArrowBackOutlinedIcon fontSize="large" /></ Link>
-      </Button>
+        >
+          <ArrowBackOutlinedIcon fontSize="large" />
+        </Button>
+      </ Link>
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs" sx={{ background: 'white' }}>
           <CssBaseline />
@@ -140,10 +157,7 @@ export default function SignUp() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                onClick={(e) => {
-                  handleClick(e);
-                  setCurrentAffConnexion(true);
-                }}
+                onClick={(e) => {handleClick(e)}}
               >
                 Sign Up
               </Button>

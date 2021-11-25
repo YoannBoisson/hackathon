@@ -6,7 +6,7 @@ import { apiGetSearchArtist } from "../../api/apiSearchArtist";
 import { apiGetSearchTrack } from "../../api/apiSearchTrack";
 /* import ErrorMessage from '../ErrorMessage';
 import Loading from '../Loading'; */
-import ThemeContext from "../../contexts/ThemeContext";
+import ThemeContext from "../../contexts/themeContext";
 import "./search-result.css";
 
 function SearchResult(props) {
@@ -76,7 +76,11 @@ function SearchResult(props) {
           //   }}
           // >
           <div className="item-result">
-            <img className="picture-result" src={album.cover_small} alt={album.id} />
+            <img
+              className="picture-result"
+              src={album.cover_small}
+              alt={album.id}
+            />
             <p className="display-result">{album.title}</p>
           </div>
           // </Link>
@@ -93,7 +97,11 @@ function SearchResult(props) {
           //   }}
           // >
           <div className="item-result">
-            <img className="picture-result" src={artiste.picture_small} alt={artiste.id} />
+            <img
+              className="picture-result"
+              src={artiste.picture_small}
+              alt={artiste.id}
+            />
             <p className="display-result">{artiste.name}</p>
           </div>
           // </Link>
@@ -110,7 +118,11 @@ function SearchResult(props) {
           //   }}
           // >
           <div className="item-result">
-            <img className="picture-result" src={track.album.cover_small} alt={track.id} />
+            <img
+              className="picture-result"
+              src={track.album.cover_small}
+              alt={track.id}
+            />
             <p className="display-result">{track.title}</p>
           </div>
           // </Link>

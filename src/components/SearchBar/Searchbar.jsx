@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import SearchResult from '../SearchResult/SearchResult';
-import ThemeContext from "../../contexts/ThemeContext";
+import ThemeContext from "../../contexts/themeContext";
 import "./searchbar.css";
 
 function Searchbar() {
