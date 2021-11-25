@@ -1,12 +1,14 @@
 import Searchbar from "./components/SearchBar/Searchbar";
-import ThemeSwitcher from "./contexts/ThemeSwitcher";
-import './App.css'
+import Navbar from "./components/Navbar";
+import Router from "./routes";
+
 
 function App() {
   return (
     <div className="app-container">
       <Searchbar />
-      <ThemeSwitcher />
+      <Navbar />
+      <Router />
     </div>
   );
 }
