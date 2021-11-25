@@ -3,6 +3,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState, useEffect } from 'react';
 import * as PropTypes from 'prop-types';
+import { NavLink } from "react-router-dom";
 import axios from 'axios';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -103,7 +104,7 @@ export default function SignIn() {
           setCurrentAffConnexion(false); // modification de la valeur aff
         }}
       >
-        <ArrowBackOutlinedIcon fontSize="large" />
+        <NavLink to="/"><ArrowBackOutlinedIcon fontSize="large" /></ NavLink>
       </Button>
 
       <ThemeProvider theme={theme}>

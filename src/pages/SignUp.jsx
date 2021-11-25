@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import * as PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -59,7 +60,7 @@ export default function SignUp() {
           setCurrentAffConnexion(false); // modification de la valeur aff
         }}
       >
-        <ArrowBackOutlinedIcon fontSize="large" />
+        <Link to="/" ><ArrowBackOutlinedIcon fontSize="large" /></ Link>
       </Button>
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs" sx={{ background: 'white' }}>
