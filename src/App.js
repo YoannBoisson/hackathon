@@ -8,7 +8,8 @@ function App() {
     <div className="app-container">
       {/* <ThemeSwitcher /> */}
       <Navbar />
-      {/* <Searchbar /> */}
+      <Searchbar />
+      <ThemeSwitcher />
       <Router />
     </div>
   );
