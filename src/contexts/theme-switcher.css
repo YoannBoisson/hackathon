@@ -1,0 +1,70 @@
+:root {
+  --bg-color: rgb(255, 255, 255);
+  --font-color: rgb(40, 40, 40);
+}
+
+input[type="checkbox"] {
+  position: fixed;
+  left: 90vw;
+  top: 10vh;
+  visibility: hidden;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  background: var(--bg-color);
+  box-shadow: inset 0 0 4px rgba(40, 40, 40, 0.8);
+  height: 36px;
+  width: 66px;
+  visibility: visible;
+  display: block;
+  border-radius: 28px;
+  position: relative;
+  top: -18px;
+  left: -33px;
+  padding: 0;
+  margin: 0;
+}
+input[type="checkbox"]::after {
+  content: "";
+  background: rgb(40, 40, 40);
+  height: 30px;
+  width: 30px;
+  visibility: visible;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  top: -51px;
+  left: -29px;
+  padding: 0;
+  margin: 0;
+  transition: left 0.4s ease-in-out;
+}
+input[type="checkbox"]:checked::before {
+  background: rgb(40, 40, 40);
+  box-shadow: inset 0 0 4px rgba(0, 0, 0.8);
+}
+input[type="checkbox"]:checked::after {
+  left: -1px;
+  background: var(--bg-color);
+}
+
+input[type="checkbox"] + div {
+  color: var(--font-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+input[type="checkbox"]:checked + div {
+  --bg-color: rgb(55, 55, 55);
+  --font-color: rgb(240, 240, 240);
+
+  color: var(--font-color);
+  background: var(--bg-color);
+}

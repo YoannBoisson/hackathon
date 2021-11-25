@@ -1,7 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import { ThemeContextProvider } from "./contexts/ThemeContext";
 import { InfoUserContextProvider } from './contexts/InfoUserContext';
 import { PagesAffContextProvider } from './contexts/PagesAffContext';
 import { Provider } from "react-redux";
@@ -13,9 +14,11 @@ ReactDOM.render(
     <BrowserRouter>
       <PagesAffContextProvider>
         <InfoUserContextProvider>
+        <ThemeContextProvider>
           <Provider store={store}>
             <App />
           </Provider>
+          </ThemeContextProvider>
         </ InfoUserContextProvider>
       </ PagesAffContextProvider>
     </BrowserRouter>
