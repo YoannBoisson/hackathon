@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import "./searchbar.css";
 import SearchResult from '../SearchResult/SearchResult';
+import ThemeContext from "../../contexts/ThemeContext";
+import "./searchbar.css";
 
 function Searchbar() {
   const [search, setSearch] = useState("");
+  const { theme } = useContext(ThemeContext);
 
   const handleSearch = (e) => {
     const result = e.target.value;
@@ -29,6 +31,7 @@ function Searchbar() {
         id="searchbar"
         value={search}
         onChange={handleSearch}
+        style={theme}
       />
       <SearchIcon className="fa"/>
       {search && <SearchResult search={search} />}
