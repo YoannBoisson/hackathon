@@ -32,11 +32,11 @@
   background: #607d8b;
 }
 
-p {
+.display-result {
   margin-bottom: 1px;
 }
 
-img {
+.picture-result {
   margin: 5px;
 }
 
