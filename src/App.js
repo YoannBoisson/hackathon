@@ -9,6 +9,7 @@ function App() {
     <div className="app-container">
       <ThemeSwitcher />
       <Navbar />
+      <Searchbar />
       <ThemeSwitcher />
       <Router />
     </div>

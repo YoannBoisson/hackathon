@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import InfoUserContext from "../contexts/InfoUserContext";
@@ -6,11 +6,13 @@ import PagesAffContext from "../contexts/PagesAffContext";
 
 const Navbar = () => {
   const { currentInfoUser, setCurrentInfoUser } = useContext(InfoUserContext);
-  const {
-    setCurrentAffConnexion,
-    currentAffInscription,
+  const { currentAffInscription, 
+    currentAffConnexion, 
+    setCurrentAffConnexion, 
     setCurrentAffInscription,
-  } = useContext(PagesAffContext);
+    currentAffDescription,
+    setCurrentAffDescription,
+   } = useContext(PagesAffContext);
   return (
     <div>
       <nav>
@@ -25,34 +27,35 @@ const Navbar = () => {
       </nav>
 
       {!currentAffInscription && currentInfoUser.length <= 0 ? (
-        <Button
-          sx={{ display: "block" }}
-          onClick={() => {
-            setCurrentAffInscription(true);
-          }}
-        >
-          <Link to="/inscription">Inscription</Link>
-        </Button>
+        <Link to="/inscription">
+          <Button sx={{ display: "block" }} >
+            Inscription
+          </Button>
+        </Link>
       ) : null}
-      {currentInfoUser.length <= 0 ? (
-        <Button
-          sx={{ display: "block" }}
-          onClick={() => {
-            setCurrentAffConnexion(true);
-          }}
-        >
-          <Link to="/connexion">Connexion</Link>
-        </Button>
-      ) : (
-        <Button
-          onClick={() => {
-            setCurrentAffConnexion(false);
-            setCurrentInfoUser([]);
-          }}
-        >
-          Déconnexion
-        </Button>
-      )}
+
+      {!currentAffConnexion && currentInfoUser.length <= 0 ? (
+        <Link to="/connexion">
+          <Button sx={{ display: "block" }} >
+            Connexion
+          </Button>
+        </Link>
+      ) : ( currentAffDescription ?
+          (<>
+          <Link to="/">
+            <Button
+              onClick={() => {
+                setCurrentInfoUser([]);
+                setCurrentAffConnexion(false);
+                setCurrentAffInscription(false);
+                setCurrentAffDescription(false);
+              }}
+              >
+                Déconnexion
+              </Button>
+            </Link>
+          </>) : null ) 
+      }
     </div>
   );
 };
