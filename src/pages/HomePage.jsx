@@ -1,10 +1,25 @@
-import React from 'react';
+import React from "react";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import EmojiWheel from "../components/EmojiWheel/EmojiWheel";
+import Searchbar from "../components/SearchBar/Searchbar";
 
 function HomePage() {
   return (
-  <>
-    yes
-  </>
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Searchbar />
+        </Grid>
+        <Grid item xs={4}>
+          PUTAIN
+        </Grid>
+        <Grid item xs={4}>
+          <EmojiWheel />
+        </Grid>
+        <Grid item xs={12}></Grid>
+      </Grid>
+    </Box>
   );
 }
 

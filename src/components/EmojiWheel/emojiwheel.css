@@ -14,7 +14,6 @@
   );
   justify-content: center;
   align-items: center;
-  cursor: not-allowed;
 }
 
 .humor:hover {
@@ -30,34 +29,40 @@
   height: 70px;
   border-radius: 200px 20px;
   padding-top: 30px;
+  cursor: pointer;
 }
 
 .humor-2 {
   height: 70px;
   border-radius: 200px;
   padding-bottom: 30px;
+  cursor: pointer;
 }
 
 .humor-3 {
   height: 70px;
   border-radius: 20px 200px;
   padding-top: 30px;
+  cursor: pointer;
 }
 
 .humor-4 {
   height: 70px;
   border-radius: 20px 200px;
   padding-bottom: 30px;
+  cursor: pointer;
 }
 
 .humor-5 {
   height: 70px;
   border-radius: 35px;
   padding-top: 30px;
+  cursor: pointer;
 }
 
 .humor-6 {
   height: 70px;
   border-radius: 200px 20px;
   padding-bottom: 30px;
+  cursor: pointer;
 }
