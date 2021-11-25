@@ -1,0 +1,7 @@
+const chartAlbumTypes = {
+  LOAD_CHART_ALBUM: 'LOAD_CHART_ALBUM',
+  LOAD_CHART_ALBUM_SUCCESS: 'LOAD_CHART_ALBUM_SUCCESS',
+  LOAD_CHART_ALBUM_ERROR: 'LOAD_CHART_ALBUM_ERROR',
+};
+
+export default chartAlbumTypes;
