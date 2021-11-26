@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import Box from '@mui/material/Box';
 import InfoUserContext from "../../contexts/InfoUserContext";
 import PagesAffContext from "../../contexts/PagesAffContext";
 
@@ -8,7 +7,7 @@ import PagesAffContext from "../../contexts/PagesAffContext";
 function Navbar() {
   const [navOpen, setnavOpen] = useState("bx bx-menu");
   const [open, setOpen] = useState("sidebar");
-  const { currentInfoUser, setCurrentInfoUser } = useContext(InfoUserContext);
+  const { currentInfoUser, setCurrentInfoUser, setReponseBdd } = useContext(InfoUserContext);
   const { currentAffInscription, 
     currentAffConnexion, 
     setCurrentAffConnexion, 
@@ -88,6 +87,7 @@ function Navbar() {
                 setCurrentAffConnexion(false);
                 setCurrentAffInscription(false);
                 setCurrentAffDescription(false);
+                setReponseBdd('');
               }}
               >
                 <Link to="/">

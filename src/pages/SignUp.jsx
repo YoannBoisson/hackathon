@@ -26,6 +26,7 @@ export default function SignUp() {
   const [email, setEmail] = useState('');
 /*   const [champsRempli, setChampsRempli] = useState(''); */
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
