@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import EmojiWheel from "../components/EmojiWheel/EmojiWheel";
 import Searchbar from "../components/SearchBar/Searchbar";
 import PagesAffContext from "../contexts/PagesAffContext";
+import Quizz from "../components/quizz/Quizz";
 
 function HomePage() {
   const { setCurrentAffConnexion, setCurrentAffInscription } =
@@ -13,8 +14,11 @@ function HomePage() {
   return (
     <Box sx={{ flexGrow: 1, paddingLeft: "78px" }}>
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ textAlign: "center" }}>
           <Searchbar />
+        </Grid>
+        <Grid item xs={12}>
+          <Quizz />
         </Grid>
         <Grid item xs={4}>
           <EmojiWheel />
