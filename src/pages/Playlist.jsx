@@ -17,7 +17,6 @@ export default function Playlist() {
       container
       className="container"
       sx={{
-        paddingLeft: "78px",
         mt: 5,
       }}
       style={theme}
