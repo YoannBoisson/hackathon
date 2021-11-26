@@ -24,19 +24,21 @@ function Searchbar() {
   });
 
   return (
-    <form className="searchform" action="">
-      <input
-        className="searchinput"
-        type="search"
-        required
-        id="searchbar"
-        value={search}
-        onChange={handleSearch}
-        style={theme}
-      />
-      <SearchIcon className="fa" />
-      {search && <SearchResult search={search} />}
-    </form>
+    <div className="container">
+      <form className="searchform" action="">
+        <input
+          className="searchinput"
+          type="search"
+          required
+          id="searchbar"
+          value={search}
+          onChange={handleSearch}
+          style={theme}
+        />
+        <SearchIcon className="fa" />
+        {search && <SearchResult search={search} />}
+      </form>
+    </div>
   );
 }
 
