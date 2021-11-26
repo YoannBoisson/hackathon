@@ -16,13 +16,11 @@ import Container from '@mui/material/Container';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import PagesAffContext from '../contexts/PagesAffContext';
-import ThemeContext from "../contexts/ThemeContext";
 
-const theme2 = createTheme();
+const theme = createTheme();
 
 export default function SignUp() {
   const { setCurrentAffConnexion, setCurrentAffInscription, setRedirectHome, redirectHome } = useContext(PagesAffContext);
-  const { theme } = useContext(ThemeContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -72,7 +70,7 @@ export default function SignUp() {
 }
 
   return (
-    <div style={{theme}}>
+    <div>
       <Link to="/" ><Button
         onClick={() => {
           setCurrentAffInscription(false);
@@ -82,7 +80,7 @@ export default function SignUp() {
           <ArrowBackOutlinedIcon fontSize="large" />
         </Button>
       </ Link>
-      <ThemeProvider theme={theme2}>
+      <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs" sx={{ background: 'white' }}>
           <CssBaseline />
           <Box
