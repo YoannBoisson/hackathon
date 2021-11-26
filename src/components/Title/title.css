@@ -22,6 +22,8 @@ h1 {
     letter-spacing: 10px;
     font-size: 100px;
     cursor: pointer;
+    z-index: 10;
+    position: relative;
     /* background: rgba(255, 166, 0, 0.596); */
 }
 h1 span {
