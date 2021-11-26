@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import EmojiWheel from "../components/EmojiWheel/EmojiWheel";
 import Searchbar from "../components/SearchBar/Searchbar";
-import PagesAffContext from '../contexts/PagesAffContext';
+import PagesAffContext from "../contexts/PagesAffContext";
 
 function HomePage() {
-  const { setCurrentAffConnexion, setCurrentAffInscription } = useContext(PagesAffContext);
+  const { setCurrentAffConnexion, setCurrentAffInscription } =
+    useContext(PagesAffContext);
   setCurrentAffConnexion(false);
   setCurrentAffInscription(false);
   return (
