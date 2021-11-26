@@ -99,7 +99,17 @@ function Navbar() {
       }
           </li>
           <li style={{ color: 'white', textAlign: 'center' }}>
-            {currentInfoUser.username}
+          {open === "sidebar open" 
+          ? 
+          currentInfoUser.username 
+          : 
+          ( 
+            currentAffDescription 
+            ? 
+            <i className="bx bxs-user-circle" /> 
+            : 
+            null
+          )}
           </li>
         </ul>
       </div>

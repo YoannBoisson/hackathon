@@ -13,7 +13,7 @@ function Searchbar() {
     setSearch(result);
   };
 
-  window.addEventListener("click", (e) => {
+/*   window.addEventListener("click", (e) => {
     if (document.getElementById("searchbar").contains(e.target)) {
       const clear = "";
       setSearch(clear);
@@ -21,7 +21,7 @@ function Searchbar() {
       const clear = "";
       setSearch(clear);
     }
-  });
+  }); */
 
   return (
     <form className="searchform" action="">
