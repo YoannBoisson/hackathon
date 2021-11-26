@@ -20,10 +20,8 @@ import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import InfoUserContext from '../contexts/InfoUserContext';
 import PagesAffContext from '../contexts/PagesAffContext';
-import ThemeContext from "../contexts/ThemeContext";
 
 function Copyright(props) {
-  const { theme } = useContext(ThemeContext);
   return (
     <Typography
       variant="body2"
@@ -148,7 +146,7 @@ export default function SignIn() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }} />
+            <Avatar sx={{ m: 1, bgcolor: 'primary' }} />
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>

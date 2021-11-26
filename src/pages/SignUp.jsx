@@ -16,13 +16,11 @@ import Container from '@mui/material/Container';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import PagesAffContext from '../contexts/PagesAffContext';
-import ThemeContext from "../contexts/ThemeContext";
 
-const theme2 = createTheme();
+const theme = createTheme();
 
 export default function SignUp() {
   const { setCurrentAffConnexion, setCurrentAffInscription, setRedirectHome, redirectHome } = useContext(PagesAffContext);
-  const { theme } = useContext(ThemeContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -71,7 +69,7 @@ export default function SignUp() {
 }
 
   return (
-    <div style={{theme}}>
+    <div>
       <Link to="/" ><Button
         onClick={() => {
           setCurrentAffInscription(false);
@@ -81,7 +79,7 @@ export default function SignUp() {
           <ArrowBackOutlinedIcon fontSize="large" />
         </Button>
       </ Link>
-      <ThemeProvider theme={theme2}>
+      <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs" sx={{ background: 'white' }}>
           <CssBaseline />
           <Box
@@ -92,7 +90,7 @@ export default function SignUp() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <Avatar sx={{ m: 1, bgcolor: 'primary' }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -150,7 +148,7 @@ export default function SignUp() {
                     control={
                       <Checkbox value="allowExtraEmails" color="primary" />
                     }
-                    label="I want to receive inspiration, marketing promotions and updates via email."
+                    label="J'accepte de recevoir des spams de la part de nos partenaires de la Wild Code School."
                   />
                 </Grid>
               </Grid>
