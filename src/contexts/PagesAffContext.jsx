@@ -11,6 +11,7 @@ export const PagesAffContextProvider = ({ children }) => {
     const [currentAffConnexion, setCurrentAffConnexion] = useState(false);
     const [currentAffInscription, setCurrentAffInscription] = useState(false);
     const [currentAffDescription, setCurrentAffDescription] = useState(false);
+    const [currentAffMusiqueHumeur, setCurrentAffMusiqueHumeur] = useState(false);
     const [redirectHome, setRedirectHome] = useState(false);
 
     useEffect(() => {
@@ -30,7 +31,9 @@ export const PagesAffContextProvider = ({ children }) => {
             redirectHome, 
             setRedirectHome,
             currentAffDescription,
-            setCurrentAffDescription }}>
+            setCurrentAffDescription,
+            currentAffMusiqueHumeur, 
+            setCurrentAffMusiqueHumeur }}>
             { children }
         </PagesAffContext.Provider>
     )
