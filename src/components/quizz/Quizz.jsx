@@ -9,6 +9,7 @@ import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import Player from "../Player/Player";
 import InfoUserContext from "../../contexts/InfoUserContext";
+import { grey } from "@mui/material/colors";
 
 export default function Quizz() {
   const { currentInfoUser, reponseBdd, setReponseBdd } = useContext(InfoUserContext);
@@ -311,8 +312,28 @@ export default function Quizz() {
             value={response1}
             onChange={handleRadioChange1}
           >
-            <FormControlLabel value="q1t" control={<Radio />} label="Oui" />
-            <FormControlLabel value="q1f" control={<Radio />} label="Non" />
+            <FormControlLabel
+              value="q1t"
+              control={
+                <Radio
+                  sx={{
+                    color: grey[500],
+                  }}
+                />
+              }
+              label="Oui"
+            />
+            <FormControlLabel
+              value="q1f"
+              control={
+                <Radio
+                  sx={{
+                    color: grey[500],
+                  }}
+                />
+              }
+              label="Non"
+            />
           </RadioGroup>
 
           <FormLabel component="legend">Etes-vous sportif ?</FormLabel>
@@ -322,8 +343,28 @@ export default function Quizz() {
             value={response2}
             onChange={handleRadioChange2}
           >
-            <FormControlLabel value="q2t" control={<Radio />} label="Oui" />
-            <FormControlLabel value="q2f" control={<Radio />} label="Non" />
+            <FormControlLabel
+              value="q2t"
+              control={
+                <Radio
+                  sx={{
+                    color: grey[500],
+                  }}
+                />
+              }
+              label="Oui"
+            />
+            <FormControlLabel
+              value="q2f"
+              control={
+                <Radio
+                  sx={{
+                    color: grey[500],
+                  }}
+                />
+              }
+              label="Non"
+            />
           </RadioGroup>
 
           <FormLabel component="legend">Aimez-vous les nouveautés ?</FormLabel>
@@ -333,8 +374,28 @@ export default function Quizz() {
             value={response3}
             onChange={handleRadioChange3}
           >
-            <FormControlLabel value="q3t" control={<Radio />} label="Oui" />
-            <FormControlLabel value="q3f" control={<Radio />} label="Non" />
+            <FormControlLabel
+              value="q3t"
+              control={
+                <Radio
+                  sx={{
+                    color: grey[500],
+                  }}
+                />
+              }
+              label="Oui"
+            />
+            <FormControlLabel
+              value="q3f"
+              control={
+                <Radio
+                  sx={{
+                    color: grey[500],
+                  }}
+                />
+              }
+              label="Non"
+            />
           </RadioGroup>
 
           <FormLabel component="legend">Êtes-vous sentimentale ?</FormLabel>
@@ -344,8 +405,28 @@ export default function Quizz() {
             value={response4}
             onChange={handleRadioChange4}
           >
-            <FormControlLabel value="q4t" control={<Radio />} label="Oui" />
-            <FormControlLabel value="q4f" control={<Radio />} label="Non" />
+            <FormControlLabel
+              value="q4t"
+              control={
+                <Radio
+                  sx={{
+                    color: grey[500],
+                  }}
+                />
+              }
+              label="Oui"
+            />
+            <FormControlLabel
+              value="q4f"
+              control={
+                <Radio
+                  sx={{
+                    color: grey[500],
+                  }}
+                />
+              }
+              label="Non"
+            />
           </RadioGroup>
 
           <FormHelperText>{helperText}</FormHelperText>

@@ -6,6 +6,7 @@ import PagesAffContext from "../../contexts/PagesAffContext";
 const EmojiWheel = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
+
   const handleMenu = () => {
     setToggleMenu(!toggleMenu);
   };
@@ -58,7 +59,6 @@ const EmojiWheel = () => {
           </div>
           <div className="itemMenuBox contact">
             <p
-              href="javascript:void(0)"
               className="itemMenu "
               id="6907602664"
               onClick={handleId}
