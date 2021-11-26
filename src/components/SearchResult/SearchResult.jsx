@@ -27,13 +27,6 @@ function SearchResult(props) {
       <section>
         <h3>Album</h3>
         {searchAlbum.albumFound.map((album) => (
-          // <Link
-          //   to={`/album/${album.id}`}
-          //   style={{
-          //     textDecoration: 'none',
-          //     color: 'white',
-          //   }}
-          // >
           <div className="item-result">
             <img
               className="picture-result"
@@ -42,19 +35,11 @@ function SearchResult(props) {
             />
             <p className="display-result">{album.title}</p>
           </div>
-          // </Link>
         ))}
       </section>
       <section>
         <h3>Artiste</h3>
         {searchArtist.artistFound.map((artiste) => (
-          // <Link
-          //   to={`/artist/${artiste.id}`}
-          //   style={{
-          //     textDecoration: 'none',
-          //     color: 'white',
-          //   }}
-          // >
           <div className="item-result">
             <img
               className="picture-result"
@@ -63,19 +48,11 @@ function SearchResult(props) {
             />
             <p className="display-result">{artiste.name}</p>
           </div>
-          // </Link>
         ))}
       </section>
       <section>
         <h3>Titre</h3>
         {searchTrack.trackFound.map((track) => (
-          // <Link
-          //   to={`/track/${track.id}`}
-          //   style={{
-          //     textDecoration: 'none',
-          //     color: 'white',
-          //   }}
-          // >
           <div className="item-result">
             <img
               className="picture-result"
@@ -84,7 +61,6 @@ function SearchResult(props) {
             />
             <p className="display-result">{track.title}</p>
           </div>
-          // </Link>
         ))}
       </section>
     </div>

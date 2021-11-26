@@ -29,7 +29,7 @@
 }
 
 .item-result:hover {
-  background: #607d8b;
+  filter: invert(75%);
 }
 
 .display-result {
