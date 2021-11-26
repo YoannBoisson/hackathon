@@ -182,7 +182,7 @@ export default function Quizz() {
 
           <FormHelperText>{helperText}</FormHelperText>
           <Button sx={{ mt: 1, mr: 1 }} type="submit" variant="outlined">
-            Check Answer
+            Give me a playlist
           </Button>
         </FormControl>
       </form>
