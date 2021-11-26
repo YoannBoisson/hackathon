@@ -53,8 +53,8 @@ const EmojiWheel = () => {
           <iframe
           title="deezer-widget"
           src={`https://widget.deezer.com/widget/dark/playlist/${id}?tracklist=false`}
-          width="100%"
-          height="300"
+          width="400"
+          height="350"
           frameborder="0"
           allowtransparency="true"
           allow="encrypted-media; clipboard-write"

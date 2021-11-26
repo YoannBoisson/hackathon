@@ -6,11 +6,11 @@ import './pages.css';
 
 const Games = () => {
   const { setCurrentAffConnexion, setCurrentAffInscription } = useContext(PagesAffContext);
-  const { theme } = useContext(ThemeContext);
+  const { themeTitle } = useContext(ThemeContext);
   setCurrentAffConnexion(false);
   setCurrentAffInscription(false);
-  return <Box className="container" sx={{paddingLeft:"78px"}} style={theme}>
-        <h1>Bienvenue sur la page des playlists</h1>
+  return <Box className="container" sx={{paddingLeft:"78px", height: "100%"}} style={themeTitle}>
+        <h2>Bienvenue sur la page des playlists</h2>
       </Box>;
 };
 
