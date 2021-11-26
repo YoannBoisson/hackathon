@@ -8,11 +8,12 @@ const Playlist = () => {
     useContext(PagesAffContext);
   setCurrentAffConnexion(false);
   setCurrentAffInscription(false);
+
   return (
-    <>
+    <div style={{paddingLeft: "78px"}}>
       <h1>Bienvenue sur la page des playlists</h1>
       <CardPlaylist />
-    </>
+      </div>
   );
 };
 
