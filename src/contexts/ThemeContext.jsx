@@ -4,13 +4,13 @@ import React, { useState, useCallback, createContext, useMemo } from "react";
 const THEMES = {
   light: {
     color: "#000",
-    background: "#fff",
-    border: "solid 1px #000",
+    backgroundColor: "#fff",
+    border: "#000",
   },
   dark: {
     color: "#fff",
-    background: "#000",
-    border: "solid 1px #FFF",
+    backgroundColor: "#000",
+    border: "#fff",
   },
 };
 
