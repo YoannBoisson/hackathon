@@ -4,7 +4,7 @@ import { useContext } from "react";
 import ThemeContext from "../../contexts/ThemeContext";
 
 export default function Title() {
-  const { themeTitle } = useContext(ThemeContext);
+  const { themeTitle, theme } = useContext(ThemeContext);
   let isAnimatingIn = false;
   let calledOut = false;
   let animOpened = false;
@@ -73,7 +73,7 @@ export default function Title() {
     });
   }
   return (
-    <div className='container'>
+    <div className='container' style={theme}>
       <h1 onMouseEnter={handleLetters} onMouseLeave={handleLetters} style={themeTitle}>
         <span>V</span>
         <span>e</span>
