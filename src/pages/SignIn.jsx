@@ -63,11 +63,7 @@ export default function SignIn() {
       email: data.get('username'),
       password: data.get('password'),
     });
-  };
-
-  setCurrentAffConnexion(true);
-  setCurrentAffInscription(false);
-  
+  }; 
 
   function handleClickSignIn() {
     axios

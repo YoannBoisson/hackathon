@@ -78,6 +78,31 @@ app.post('/users', (req, res) => {
   );
 });
 
+app.post('/quizz', (req, res) => {
+  const { res1, res2, res3, res4, userId } = req.body;
+  connection.query(
+    'INSERT INTO response( R1, R2, R3, R4, FK_ID ) VALUES (?,?,?,?,?)',
+    [res1, res2, res3, res4, userId],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send('Error saving the user');
+      } else {
+        const id = result.insertId;
+        const createUsers = {
+          id,
+          res1,
+          res2,
+          res3,
+          res4,
+          userId
+        };
+        res.status(201).send(createUsers);
+      }
+    }
+  );
+});
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });

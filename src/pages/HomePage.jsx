@@ -11,13 +11,10 @@ function HomePage() {
   setCurrentAffConnexion(false);
   setCurrentAffInscription(false);
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, paddingLeft: "78px" }}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Searchbar />
-        </Grid>
-        <Grid item xs={4}>
-          PUTAIN
         </Grid>
         <Grid item xs={4}>
           <EmojiWheel />

@@ -36,8 +36,8 @@ export default function SignUp() {
     });
   };
 
-  setCurrentAffInscription(true);
-  setCurrentAffConnexion(false);
+/*   setCurrentAffInscription(true);
+  setCurrentAffConnexion(false); */
 
   function handleClick(e) {
     e.preventDefault();
