@@ -11,6 +11,7 @@ export const apiGetTrackPlaylist = (id) => {
     axiosApiMusic
       .get(`/playlist/${id}/tracks`)
       .then((res) => {
+        console.log(res.data);
         dispatch(trackPlaylistSuccess(res.data));
         return res;
       })

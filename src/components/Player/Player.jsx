@@ -12,7 +12,6 @@ function Player({ playlist }) {
         allowtransparency="true"
         allow="encrypted-media; clipboard-write"
       />
-      ;
     </>
   );
 }
