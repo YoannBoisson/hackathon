@@ -3,23 +3,23 @@ import React, { useState, useCallback, createContext, useMemo } from "react";
 
 const THEMES = {
   light: {
-    color: "#000",
-    backgroundColor: "#fff",
-    border: "#000",
-  },
-  dark: {
     color: "#fff",
     backgroundColor: "#000",
     border: "#fff",
+  },
+  dark: {
+    color: "#000",
+    backgroundColor: "#fff",
+    border: "#000",
   },
 };
 
 const THEMESTITLE = {
   light: {
-    color: "#000",
+    color: "#fff",
   },
   dark: {
-    color: "#fff",
+    color: "#000",
   },
 };
 

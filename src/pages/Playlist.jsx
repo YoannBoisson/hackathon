@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import "./pages.css";
 
 export default function Playlist() {
-  const { theme } = useContext(ThemeContext);
+  const { theme, themeTitle } = useContext(ThemeContext);
   const { setCurrentAffConnexion, setCurrentAffInscription } =
     useContext(PagesAffContext);
   setCurrentAffConnexion(false);
@@ -17,10 +17,10 @@ export default function Playlist() {
       container
       className="container"
       sx={{
-        paddingLeft: "78px",
         mt: 5,
+        display: "flex", justifyContent:"center", alignItems:"center"
       }}
-      style={theme}
+      style={themeTitle}
     >
       <Grid item xs={12} sx={{ mb: 5 }}>
         <h2>Bienvenue sur la page des playlists</h2>

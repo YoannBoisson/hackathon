@@ -1,8 +1,10 @@
 .board {
+  position: relative;
+  top: 30px;
   width: calc(100vh - 240px);
   max-width: calc(100vw - 40px);
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 12px;
   margin: auto;
   grid-template-columns: repeat(6, 1fr);
 }
@@ -14,7 +16,7 @@
 }
 
 .card {
-  border-radius: 5px;
+  border-radius: 10px;
   position: relative;
   width: 100%;
   height: 100%;
@@ -37,7 +39,7 @@
 }
 
 .card .back {
-  background-color: #468;
+  background-color: rgb(13, 47, 80);
   transform: rotateY(180deg);
 }
 .card-outer.flipped .card {

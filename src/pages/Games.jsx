@@ -47,8 +47,6 @@ const Games = () => {
 
   return (
     <div className="container" style={themeTitle}>
-      
-      <h2>Bienvenue sur la page de jeux</h2>
       <div className="board">
         {cards.map((card, index) => {
           const flippedToFront =
@@ -63,7 +61,7 @@ const Games = () => {
                 <div className="front">
                   <img src={card} alt="" />
                 </div>
-                <div className="back" />
+                <div className="back" ><span style={{fontSize: "50px", color: 'white', textAlign: 'center', lineHeight: "100px"}}>?</span></div>
               </div>
             </div>
           );
@@ -72,14 +70,14 @@ const Games = () => {
       <div className="stats">
         {won && (
           <>
-            You won the game! Congratulations!
+            Vous avez gagné ! Meme si vous avez bien galérer.
             <br />
-            Click any card to play again.
+            Cliquez sur une carte pour rejouer.
             <br />
             <br />
           </>
         )}
-        Clicks: {clicks} &nbsp;&nbsp;&nbsp; Found pairs:{foundPairs.length / 2}
+        Nombre de clicks : {clicks} &nbsp;&nbsp;&nbsp; Nombre de paires trouvées : {foundPairs.length / 2}
       </div>
     </div>
   );

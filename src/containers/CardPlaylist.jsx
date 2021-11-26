@@ -14,7 +14,7 @@ export default function CardPlaylist() {
 
 
   return (
-    <Grid container sx={{ gap: 10 }}>
+    <Grid container gap={10} sx={{pl: 27}}>
       {chartPlaylist.top.map((element) => (
         <Grid item xs={5}>
           <Cards {...element} />
