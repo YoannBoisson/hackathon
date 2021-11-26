@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import Box from '@mui/material/Box';
+import InfoUserContext from "../../contexts/InfoUserContext";
+import PagesAffContext from "../../contexts/PagesAffContext";
+
 
 function Navbar() {
   const [navOpen, setnavOpen] = useState("bx bx-menu");
   const [open, setOpen] = useState("sidebar");
+  const { currentInfoUser, setCurrentInfoUser } = useContext(InfoUserContext);
+  const { currentAffInscription, 
+    currentAffConnexion, 
+    setCurrentAffConnexion, 
+    setCurrentAffInscription,
+    currentAffDescription,
+    setCurrentAffDescription,
+   } = useContext(PagesAffContext);
 
   function menuBtnChange() {
     setnavOpen((prevNavOpen) => {
@@ -51,18 +63,43 @@ function Navbar() {
               <span className="links_name">Jeux</span>
             </Link>
           </li>
+          <li>
+          {!currentAffInscription && currentInfoUser.length <= 0 ? (
+          <li>
+            <Link to="/inscription">
+              <i className="bx bxs-id-card" />
+              <span className="links_name">Inscription</span>
+            </Link>
+          </li>
+      ) : null}
 
+      {!currentAffConnexion && currentInfoUser.length <= 0 ? (
           <li>
             <Link to="/connexion">
               <i className="bx bxs-user-circle" />
               <span className="links_name">Connexion</span>
             </Link>
           </li>
-          <li>
-            <Link to="/inscription">
-              <i className="bx bxs-id-card" />
-              <span className="links_name">Inscription</span>
-            </Link>
+      ) : ( currentAffDescription ?
+          (<>
+            <li
+              onClick={() => {
+                setCurrentInfoUser([]);
+                setCurrentAffConnexion(false);
+                setCurrentAffInscription(false);
+                setCurrentAffDescription(false);
+              }}
+              >
+                <Link to="/">
+                  <i class='bx bx-exit'></i>
+                  <span className="links_name">Déconnexion</span>
+                </Link>
+              </li>
+          </>) : null ) 
+      }
+          </li>
+          <li style={{ color: 'white', textAlign: 'center' }}>
+            {currentInfoUser.username}
           </li>
         </ul>
       </div>
