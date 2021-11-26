@@ -1,11 +1,19 @@
 import React, { useContext } from "react";
-import PagesAffContext from '../contexts/PagesAffContext';
+import PagesAffContext from "../contexts/PagesAffContext";
+import CardPlaylist from "../containers/CardPlaylist";
 
-const Games = () => {
-  const { setCurrentAffConnexion, setCurrentAffInscription } = useContext(PagesAffContext);
+const Playlist = () => {
+
+  const { setCurrentAffConnexion, setCurrentAffInscription } =
+    useContext(PagesAffContext);
   setCurrentAffConnexion(false);
   setCurrentAffInscription(false);
-  return <h1>Bienvenue sur la page des playlists</h1>;
+  return (
+    <>
+      <h1>Bienvenue sur la page des playlists</h1>
+      <CardPlaylist />
+    </>
+  );
 };
 
-export default Games;
+export default Playlist;

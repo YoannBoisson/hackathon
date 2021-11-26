@@ -17,7 +17,6 @@ function HomePage() {
           <Searchbar />
         </Grid>
         <Grid item xs={4}>
-          PUTAIN
         </Grid>
         <Grid item xs={4}>
           <EmojiWheel />
