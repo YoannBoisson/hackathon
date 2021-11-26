@@ -6,7 +6,7 @@ import "./searchbar.css";
 
 function Searchbar() {
   const [search, setSearch] = useState("");
-  const { theme } = useContext(ThemeContext);
+  const { theme, themeTitle } = useContext(ThemeContext);
 
   const handleSearch = (e) => {
     const result = e.target.value;

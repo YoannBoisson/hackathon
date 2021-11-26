@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import PagesAffContext from "../contexts/PagesAffContext";
 import ThemeContext from "../contexts/ThemeContext";
 import CardPlaylist from "../containers/CardPlaylist";
-import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import "./pages.css";
 
 export default function Playlist() {
@@ -13,9 +13,21 @@ export default function Playlist() {
   setCurrentAffInscription(false);
 
   return (
-    <Box className="container" sx={{ paddingLeft: "78px" }} style={theme}>
-      <h1>Bienvenue sur la page des playlists</h1>
-      <CardPlaylist />
-    </Box>
+    <Grid
+      container
+      className="container"
+      sx={{
+        paddingLeft: "78px",
+        mt: 5,
+      }}
+      style={theme}
+    >
+      <Grid item xs={12} sx={{ mb: 5 }}>
+        <h2>Bienvenue sur la page des playlists</h2>
+      </Grid>
+      <Grid item xs={8}>
+        <CardPlaylist />
+      </Grid>
+    </Grid>
   );
 }

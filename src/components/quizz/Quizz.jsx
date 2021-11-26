@@ -169,7 +169,7 @@ export default function Quizz() {
             <FormControlLabel value="q3f" control={<Radio />} label="Non" />
           </RadioGroup>
 
-          <FormLabel component="legend">Êtes-vous sentimale ?</FormLabel>
+          <FormLabel component="legend">Êtes-vous sentimentale ?</FormLabel>
           <RadioGroup
             aria-label="q4"
             name="q4"
