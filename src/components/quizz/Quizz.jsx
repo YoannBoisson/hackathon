@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import axios from 'axios';
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -7,8 +8,10 @@ import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import Player from "../Player/Player";
+import InfoUserContext from "../../contexts/InfoUserContext";
 
 export default function Quizz() {
+  const { currentInfoUser, reponseBdd, setReponseBdd } = useContext(InfoUserContext);
   const [playlist, setPlaylist] = useState("");
   const [display, setDisplay] = useState(false);
   const [value1, setValue1] = useState(false);
@@ -20,6 +23,129 @@ export default function Quizz() {
   const [response3, setResponse3] = useState("");
   const [response4, setResponse4] = useState("");
   const [helperText, setHelperText] = useState("");
+
+  useEffect(() => {
+    axios
+        .get(`http://localhost:3005/quizz/${currentInfoUser.id}`)
+        .then((response) => {
+          console.log(response.data);
+          setReponseBdd(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+  }, []);
+
+  useEffect(() => {
+    if(reponseBdd)
+    {
+      if(reponseBdd.R1 === 1)
+      {
+        setValue1(true);
+        setResponse1("q1t");
+      } else {
+        setValue1(false);
+        setResponse1("q1f");
+      }
+      if(reponseBdd.R2 === 1)
+      {
+        setValue2(true);
+        setResponse2("q2t");
+      } else {
+        setValue2(false);
+        setResponse2("q2f");
+      }
+      if(reponseBdd.R3 === 1)
+      {
+        setValue3(true);
+        setResponse3("q3t");
+      } else {
+        setValue3(false);
+        setResponse3("q3f");
+      }
+      if(reponseBdd.R4 === 1)
+      {
+        setValue4(true);
+        setResponse4("q4t");
+      } else {
+        setValue4(false);
+        setResponse4("q4f");
+      }
+    setPlaylist("1290316405");
+    setDisplay(true);
+    if (!value1 && !value2 && !value3 && value4) {
+    // Amour
+    setPlaylist("2809170204");
+    setDisplay(true);
+  } else if (!value1 && !value2 && value3 && !value4) {
+    // Nouveauté
+    setPlaylist("9550297062");
+    setDisplay(true);
+  } else if (!value1 && !value2 && value3 && value4) {
+    // Au coin du feu
+    setPlaylist("1083721131");
+    setDisplay(true);
+  } else if (!value1 && value2 && !value3 && !value4) {
+    // Sport
+    setPlaylist("1154685481");
+    setDisplay(true);
+  } else if (!value1 && value2 && !value3 && value4) {
+    // Feel good
+    setPlaylist("1203212111");
+    setDisplay(true);
+  } else if (!value1 && value2 && value3 && !value4) {
+    // Essentiels
+    setPlaylist("8453457822");
+    setDisplay(true);
+  } else if (!value1 && value2 && value3 && value4) {
+    // Concentration
+    setPlaylist("2269069702");
+    setDisplay(true);
+  } else if (value1 && !value2 && !value3 && !value4) {
+    // Soirée
+    setPlaylist("1061059991");
+    setDisplay(true);
+  } else if (value1 && !value2 && !value3 && value4) {
+    // Fete noel
+    setPlaylist("2474689942");
+    setDisplay(true);
+  } else if (value1 && !value2 && value3 && !value4) {
+    // Actu rap
+    setPlaylist("1071669561");
+    setDisplay(true);
+  } else if (value1 && !value2 && value3 && value4) {
+    // Chill & Relax summer electro
+    setPlaylist("914651125");
+    setDisplay(true);
+  } else if (value1 && value2 && !value3 && !value4) {
+    // Running sport
+    setPlaylist("7689476082");
+    setDisplay(true);
+  } else if (value1 && value2 && !value3 && value4) {
+    // live rock
+    setPlaylist("9694017462");
+    setDisplay(true);
+  } else if (value1 && value2 && value3 && !value4) {
+    // hits de l'été
+    setPlaylist("932386265");
+    setDisplay(true);
+  } else {
+    // best of
+    setPlaylist("9666268482");
+    setDisplay(true);
+  }  
+}else{
+      setDisplay(false);
+      setValue1(false);
+      setResponse1("q1f");
+      setValue2(false);
+      setResponse2("q2f");
+      setValue3(false);
+      setResponse3("q3f");
+      setValue4(false);
+      setResponse4("q4f");
+  }
+  }, [reponseBdd])
 
   const handleRadioChange1 = (event) => {
     if (event.target.value === "q1t") {
@@ -121,6 +247,26 @@ export default function Quizz() {
       // best of
       setPlaylist("9666268482");
       setDisplay(true);
+    }
+    if(currentInfoUser.username)
+    {
+      const Fk_id = currentInfoUser.id;
+      const responses = {
+        value1,
+        value2,
+        value3,
+        value4,
+        Fk_id,
+      };
+      console.log(responses);
+      axios
+        .post(`http://localhost:3005/quizz`, responses)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
 
     // if (value1 === "q1t") {

@@ -55,6 +55,26 @@ app.get('/users/:id', (req, res) => {
   );
 });
 
+app.get('/quizz/:id', (req, res) => {
+  const usersID = req.params.id;
+  connection.query(
+    'SELECT R1, R2, R3, R4 FROM response R INNER JOIN users U ON ?=R.FK_ID GROUP BY U.id',
+    [usersID],
+    (err, result) => {
+      if (err) {
+        res.status(500).send('Error retrieving data from database');
+      } else {
+        // si result n'est pas un tableau vide
+        if (result.length) {
+          res.json(result[0]);
+        } else {
+          res.status(404).send('user not found');
+        }
+      }
+    }
+  );
+});
+//;
 app.post('/users', (req, res) => {
   const { username, password, email } = req.body;
   connection.query(
@@ -79,10 +99,10 @@ app.post('/users', (req, res) => {
 });
 
 app.post('/quizz', (req, res) => {
-  const { res1, res2, res3, res4, userId } = req.body;
+  const { value1, value2, value3, value4, Fk_id } = req.body;
   connection.query(
     'INSERT INTO response( R1, R2, R3, R4, FK_ID ) VALUES (?,?,?,?,?)',
-    [res1, res2, res3, res4, userId],
+    [value1, value2, value3, value4, Fk_id],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -91,11 +111,11 @@ app.post('/quizz', (req, res) => {
         const id = result.insertId;
         const createUsers = {
           id,
-          res1,
-          res2,
-          res3,
-          res4,
-          userId
+          value1,
+           value2,
+            value3,
+             value4,
+             Fk_id
         };
         res.status(201).send(createUsers);
       }
