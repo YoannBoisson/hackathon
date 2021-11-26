@@ -8,7 +8,7 @@ const Games = () => {
   const { themeTitle } = useContext(ThemeContext);
   setCurrentAffConnexion(false);
   setCurrentAffInscription(false);
-  return <div className="container" style={themeTitle}><h2>Bienvenue sur la page de jeux</h2></div>;
+  return <div className="container"><h2>Bienvenue sur la page de jeux</h2></div>;
 };
 
 export default Games;

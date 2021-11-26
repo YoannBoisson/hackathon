@@ -20,10 +20,8 @@ import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import InfoUserContext from '../contexts/InfoUserContext';
 import PagesAffContext from '../contexts/PagesAffContext';
-import ThemeContext from "../contexts/ThemeContext";
 
 function Copyright(props) {
-  const { theme } = useContext(ThemeContext);
   return (
     <Typography
       variant="body2"
@@ -219,7 +217,3 @@ export default function SignIn() {
     </div>
   );
 }
-SignIn.propTypes = {
-  setAffConnexion: PropTypes.node.isRequired,
-  setInfoUser: PropTypes.node.isRequired,
-};

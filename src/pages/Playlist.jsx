@@ -19,7 +19,6 @@ export default function Playlist() {
       sx={{
         mt: 5,
       }}
-      style={theme}
     >
       <Grid item xs={12} sx={{ mb: 5 }}>
         <h2>Bienvenue sur la page des playlists</h2>

@@ -8,9 +8,9 @@ const THEMES = {
     border: "#000",
   },
   dark: {
-    color: "#fff",
-    backgroundColor: "#000",
-    border: "#fff",
+    color: "#000",
+    backgroundColor: "#fff",
+    border: "#000",
   },
 };
 
