@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Player from "../Player/Player";
 import "./emojiwheel.css";
 
 const EmojiWheel = () => {
@@ -10,7 +11,7 @@ const EmojiWheel = () => {
 
   return (
     <>
-            <div className="humor">
+      <div className="humor">
         <div className="humor-1" id="1479458365" onClick={handleId}>
           😁
         </div>
@@ -30,15 +31,7 @@ const EmojiWheel = () => {
           😭
         </div>
       </div>
-      <iframe
-        title="deezer-widget"
-        src={`https://widget.deezer.com/widget/dark/playlist/${id}?tracklist=false`}
-        width="100%"
-        height="300"
-        frameborder="0"
-        allowtransparency="true"
-        allow="encrypted-media; clipboard-write"
-        />
+      <Player playlist={id} />
     </>
   );
 };
