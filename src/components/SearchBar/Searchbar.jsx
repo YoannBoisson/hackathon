@@ -6,22 +6,12 @@ import "./searchbar.css";
 
 function Searchbar() {
   const [search, setSearch] = useState("");
-  const { theme } = useContext(ThemeContext);
+  const { theme, themeTitle } = useContext(ThemeContext);
 
   const handleSearch = (e) => {
     const result = e.target.value;
     setSearch(result);
   };
-
-/*   window.addEventListener("click", (e) => {
-    if (document.getElementById("searchbar").contains(e.target)) {
-      const clear = "";
-      setSearch(clear);
-    } else {
-      const clear = "";
-      setSearch(clear);
-    }
-  }); */
 
   return (
     <div className="container">
