@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-/* .app-container{
-  background-color: black;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+body {
+  height:100vh;
+}

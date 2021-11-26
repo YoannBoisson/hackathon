@@ -1,11 +1,8 @@
 import React, { useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
-/* import { Link } from 'react-router-dom'; */
 import { apiGetSearchAlbum } from "../../api/apiSearchAlbum";
 import { apiGetSearchArtist } from "../../api/apiSearchArtist";
 import { apiGetSearchTrack } from "../../api/apiSearchTrack";
-/* import ErrorMessage from '../ErrorMessage';
-import Loading from '../Loading'; */
 import ThemeContext from "../../contexts/ThemeContext";
 import "./search-result.css";
 
@@ -22,44 +19,6 @@ function SearchResult(props) {
     dispatch(apiGetSearchTrack(search));
   }, [dispatch, search]);
 
-  /*   if (
-    searchAlbum.isLoading ||
-    Object.entries(searchAlbum.albumFound).length === 0
-  ) {
-    return <Loading />;
-  }
-  if (
-    searchAlbum.error ||
-    Object.entries(searchAlbum.albumFound).length === 0
-  ) {
-    return <ErrorMessage errorMsg="Impossible de charger le résultat" />;
-  }
-
-  if (
-    searchArtist.isLoading ||
-    Object.entries(searchArtist.artistFound).length === 0
-  ) {
-    return <Loading />;
-  }
-  if (
-    searchArtist.error ||
-    Object.entries(searchArtist.artistFound).length === 0
-  ) {
-    return <ErrorMessage errorMsg="Impossible de charger le résultat" />;
-  }
-
-  if (
-    searchTrack.isLoading ||
-    Object.entries(searchTrack.trackFound).length === 0
-  ) {
-    return <Loading />;
-  }
-  if (
-    searchTrack.error ||
-    Object.entries(searchTrack.trackFound).length === 0
-  ) {
-    return <ErrorMessage errorMsg="Impossible de charger le résultat" />;
-  } */
 
   const { theme } = useContext(ThemeContext);
 

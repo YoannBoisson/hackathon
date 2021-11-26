@@ -9,7 +9,7 @@ export const apiGetChartPlaylist = () => {
   return (dispatch) => {
     dispatch(chartPlaylistLoading());
     axiosApiMusic
-      .get('/chart/0/playlists?limit=5')
+      .get('/chart/0/playlists')
       .then((res) => {
         dispatch(chartPlaylistSuccess(res.data.data));
         return res;

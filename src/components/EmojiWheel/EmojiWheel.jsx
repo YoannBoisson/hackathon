@@ -4,6 +4,12 @@ import Button from "@mui/material/Button";
 import PagesAffContext from "../../contexts/PagesAffContext";
 
 const EmojiWheel = () => {
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  const handleMenu = () => {
+    setToggleMenu(!toggleMenu);
+  };
+
   const [id, setId] = useState("53362031");
   const { currentAffMusiqueHumeur, setCurrentAffMusiqueHumeur } =
     useContext(PagesAffContext);
@@ -15,25 +21,53 @@ const EmojiWheel = () => {
   return (
     <>
       {!currentAffMusiqueHumeur ? (
-        <div className="humor">
-          <div className="humor-1" id="1479458365" onClick={handleId}>
-            😁
+        <div
+          id="mainMenu"
+          className={
+            toggleMenu
+              ? "mainMenuOverlay floating2 open"
+              : "mainMenuOverlay floating2"
+          }
+          onClick={handleMenu}
+        >
+          <div className="navire floating3"></div>
+          <div className="itemMenuBox bills">
+            <p className="itemMenu " id="1479458365" onClick={handleId}>
+              😁
+            </p>
           </div>
-          <div className="humor-2" id="1154685481" onClick={handleId}>
-            🥵
+          <div className="itemMenuBox tarsheed">
+            <p className="itemMenu " id="1154685481" onClick={handleId}>
+              🥵
+            </p>
           </div>
-          <div className="humor-3" id="8573944922" onClick={handleId}>
-            😡
+          <div className="itemMenuBox employees">
+            <p className="itemMenu " id="8573944922" onClick={handleId}>
+              😡
+            </p>
           </div>
-          <div className="humor-4" id="1386208615" onClick={handleId}>
-            🥳
+          <div className="itemMenuBox location">
+            <p className="itemMenu " id="1386208615" onClick={handleId}>
+              🥳
+            </p>
           </div>
-          <div className="humor-5" id="1290316405" onClick={handleId}>
-            😎
+          <div className="itemMenuBox eservices">
+            <p className="itemMenu " id="1290316405" onClick={handleId}>
+              😎
+            </p>
           </div>
-          <div className="humor-6" id="6907602664" onClick={handleId}>
-            😭
+          <div className="itemMenuBox contact">
+            <p
+              href="javascript:void(0)"
+              className="itemMenu "
+              id="6907602664"
+              onClick={handleId}
+            >
+              😭
+            </p>
           </div>
+
+          <p className="toggleMenu floating">🎶</p>
         </div>
       ) : (
         <Button
