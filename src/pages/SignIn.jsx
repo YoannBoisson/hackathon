@@ -217,7 +217,3 @@ export default function SignIn() {
     </div>
   );
 }
-SignIn.propTypes = {
-  setAffConnexion: PropTypes.node.isRequired,
-  setInfoUser: PropTypes.node.isRequired,
-};
