@@ -6,7 +6,7 @@ import { apiGetSearchArtist } from "../../api/apiSearchArtist";
 import { apiGetSearchTrack } from "../../api/apiSearchTrack";
 /* import ErrorMessage from '../ErrorMessage';
 import Loading from '../Loading'; */
-import ThemeContext from "../../contexts/themeContext";
+import ThemeContext from "../../contexts/ThemeContext";
 import "./search-result.css";
 
 function SearchResult(props) {
