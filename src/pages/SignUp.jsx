@@ -22,11 +22,12 @@ const theme2 = createTheme();
 
 export default function SignUp() {
   const { setCurrentAffConnexion, setCurrentAffInscription, setRedirectHome, redirectHome } = useContext(PagesAffContext);
-  const { theme } = useContext(ThemeContext);
+  const { theme, setThemeTitle, setTheme } = useContext(ThemeContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 /*   const [champsRempli, setChampsRempli] = useState(''); */
+
 
   const handleSubmit = (event) => {
     event.preventDefault();

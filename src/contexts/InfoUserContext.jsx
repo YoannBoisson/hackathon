@@ -6,8 +6,9 @@ export default InfoUserContext;
 
 export const InfoUserContextProvider = ({ children }) => {
     const [currentInfoUser, setCurrentInfoUser] = useState([]);
+    const [reponseBdd, setReponseBdd] = useState('');
     return(
-        <InfoUserContext.Provider value={{ currentInfoUser, setCurrentInfoUser }}>
+        <InfoUserContext.Provider value={{ currentInfoUser, setCurrentInfoUser, reponseBdd, setReponseBdd }}>
             { children }
         </InfoUserContext.Provider>
     )
