@@ -61,7 +61,7 @@ const Games = () => {
                 <div className="front">
                   <img src={card} alt="" />
                 </div>
-                <div className="back" ><span style={{fontSize: "50px", color: 'white', textAlign: 'center', lineHeight: "100px"}}>?</span></div>
+                <div className="back" ><span style={{fontSize: "50px", color: 'white', textAlign: 'center', lineHeight: "60px"}}>?</span></div>
               </div>
             </div>
           );
