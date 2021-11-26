@@ -123,6 +123,21 @@ app.post('/quizz', (req, res) => {
   );
 });
 
+app.put('/quizz/:id', (req, res) => {
+  const userId = req.params.id;
+  const { value1, value2, value3, value4 } = req.body;
+    connection.query('UPDATE response SET R1=?, R2=?, R3=?, R4=? WHERE FK_ID=?', 
+      [value1, value2, value3, value4, userId],
+      (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send('Error saving the response user');
+      } else {
+        res.status(201).send("Update response user");
+      }
+    }
+)});
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });

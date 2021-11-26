@@ -66,7 +66,6 @@ const EmojiWheel = () => {
               😭
             </p>
           </div>
-
           <p className="toggleMenu floating">🎶</p>
         </div>
       ) : (

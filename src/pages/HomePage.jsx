@@ -41,7 +41,7 @@ function HomePage() {
         <FormControl component="fieldset">
           <FormLabel component="legend">Choose</FormLabel>
           <RadioGroup row aria-label="choose" name="row-radio-buttons-group" onChange={handleChange}>
-            <FormControlLabel value="mood" control={<Radio />} label="Mood" />
+            <FormControlLabel value="mood" control={<Radio />}  label="Mood" />
             <FormControlLabel value="personality" control={<Radio />} label="Personality" />
           </RadioGroup>
         </FormControl>

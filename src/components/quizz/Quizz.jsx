@@ -24,6 +24,8 @@ export default function Quizz() {
   const [response4, setResponse4] = useState("");
   const [helperText, setHelperText] = useState("");
 
+  let i = false;
+
   useEffect(() => {
     axios
         .get(`http://localhost:3005/quizz/${currentInfoUser.id}`)
@@ -39,6 +41,7 @@ export default function Quizz() {
   useEffect(() => {
     if(reponseBdd)
     {
+      i = true;
       if(reponseBdd.R1 === 1)
       {
         setValue1(true);
@@ -134,7 +137,8 @@ export default function Quizz() {
     setPlaylist("9666268482");
     setDisplay(true);
   }  
-}else{
+}else if(i)
+{
       setDisplay(false);
       setValue1(false);
       setResponse1("q1f");
@@ -248,26 +252,44 @@ export default function Quizz() {
       setPlaylist("9666268482");
       setDisplay(true);
     }
-    if(currentInfoUser.username)
+    const Fk_id = currentInfoUser.id;
+    if(reponseBdd)
     {
-      const Fk_id = currentInfoUser.id;
       const responses = {
         value1,
         value2,
         value3,
         value4,
-        Fk_id,
       };
-      console.log(responses);
       axios
-        .post(`http://localhost:3005/quizz`, responses)
+        .put(`http://localhost:3005/quizz/${currentInfoUser.id}`, responses)
         .then((response) => {
           console.log(response);
         })
         .catch((error) => {
           console.log(error);
         });
+    } else 
+    {
+      if(currentInfoUser.username)
+      {
+        const responses = {
+          value1,
+          value2,
+          value3,
+          value4,
+          Fk_id,
+        };
+        axios
+          .post(`http://localhost:3005/quizz`, responses)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
     }
+  }
 
     // if (value1 === "q1t") {
     //   setHelperText("You got it!");
