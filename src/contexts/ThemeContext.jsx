@@ -39,6 +39,7 @@ export const ThemeContextProvider= ({children}) => {
   }, []);
 
   const value = useMemo(function (){
+    document.body.style.background = (theme === "light" ? 'white' : 'black');
     return {
       theme: theme === "light" ? THEMES.light : THEMES.dark,
       themeTitle: themeTitle === "light" ? THEMESTITLE.light : THEMESTITLE.dark,

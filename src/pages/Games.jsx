@@ -8,7 +8,7 @@ import {shuffle} from 'lodash';
 const Games = () => {
   const { setCurrentAffConnexion, setCurrentAffInscription } =
     useContext(PagesAffContext);
-  const { themeTitle } = useContext(ThemeContext);
+  const { themeTitle, theme } = useContext(ThemeContext);
   setCurrentAffConnexion(false);
   setCurrentAffInscription(false);
 
@@ -67,7 +67,7 @@ const Games = () => {
           );
         })}
       </div>
-      <div className="stats">
+      <div className="stats" style={{theme}}>
         {won && (
           <>
             Vous avez gagné ! Meme si vous avez bien galérer.
