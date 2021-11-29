@@ -1,0 +1,31 @@
+/* h1 {
+  text-shadow: 0 0 2px #ffd100, 0 0 30px #ffd100, 0px 0px 5px #ffd100,
+    0 0 150px #ffd100;
+  color: #ffd100;
+  background-color: #11101d;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 5vw;
+} */
+
+.container {
+    text-align: center;
+    perspective: 1000px;
+}
+h1 {
+    font-family: Playfair Display;
+    transform-style: preserve-3d;
+    display: inline-flex;
+    margin-top: 50px;
+    color: #333;
+    font-weight: 100;
+    letter-spacing: 10px;
+    font-size: 100px;
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+    /* background: rgba(255, 166, 0, 0.596); */
+}
+h1 span {
+    pointer-events: none;
+}
