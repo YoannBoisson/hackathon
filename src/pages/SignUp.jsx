@@ -27,16 +27,6 @@ export default function SignUp() {
 /*   const [champsRempli, setChampsRempli] = useState(''); */
 
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
-
 /*   setCurrentAffInscription(true);
   setCurrentAffConnexion(false); */
 
@@ -55,12 +45,10 @@ export default function SignUp() {
     if(email && username && password)
     {
       axios
-      .post(`http://localhost:3005/users`, user)
+      .post(`https://veridisquohlk.herokuapp.com/users`, user)
       .then((response) => {
-        console.log(response);
       })
       .catch((error) => {
-        console.log(error);
       });
       setCurrentAffConnexion(true);
       setRedirectHome(!redirectHome); 
@@ -100,7 +88,6 @@ export default function SignUp() {
             <Box
               component="form"
               noValidate
-              onSubmit={handleSubmit}
               sx={{ mt: 3 }}
             >
               <Grid container spacing={2}>

@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import "./pages.css";
 
 export default function Playlist() {
-  const { theme, themeTitle } = useContext(ThemeContext);
+  const { themeTitle } = useContext(ThemeContext);
   const { setCurrentAffConnexion, setCurrentAffInscription } =
     useContext(PagesAffContext);
   setCurrentAffConnexion(false);

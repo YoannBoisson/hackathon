@@ -40,8 +40,6 @@ export default function Cards(props) {
     setExpanded(!expanded);
   };
 
-  console.log(trackPlaylist);
-
   return (
     <>
       <Card sx={{ maxWidth: 345, minHeight: 400 }}>
