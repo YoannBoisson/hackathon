@@ -18,6 +18,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import PagesAffContext from '../contexts/PagesAffContext';
 
 const theme = createTheme();
+require('dotenv').config();
 
 export default function SignUp() {
   const { setCurrentAffConnexion, setCurrentAffInscription, setRedirectHome, redirectHome } = useContext(PagesAffContext);
@@ -45,7 +46,7 @@ export default function SignUp() {
     if(email && username && password)
     {
       axios
-      .post(`https://veridisquohlk.herokuapp.com/users`, user)
+      .post(`${process.env.REACT_APP_BDD}/users`, user)
       .then((response) => {
       })
       .catch((error) => {
