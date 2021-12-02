@@ -11,6 +11,8 @@ import Player from "../Player/Player";
 import InfoUserContext from "../../contexts/InfoUserContext";
 import { grey } from "@mui/material/colors";
 
+require('dotenv').config();
+
 export default function Quizz() {
   const { currentInfoUser, reponseBdd, setReponseBdd } = useContext(InfoUserContext);
   const [playlist, setPlaylist] = useState("");
@@ -26,10 +28,11 @@ export default function Quizz() {
   const [helperText, setHelperText] = useState("");
 
   let i = false;
+  console.log(process.env.REACT_APP_BDD);
 
   useEffect(() => {
     axios
-        .get(`https://veridisquohlk.herokuapp.com/users/${currentInfoUser.id}`)
+        .get(`${process.env.REACT_APP_BDD}/users/${currentInfoUser.id}`)
         .then((response) => {
           setReponseBdd(response.data);
         })
@@ -261,7 +264,7 @@ export default function Quizz() {
         value4,
       };
       axios
-        .put(`https://veridisquohlk.herokuapp.com/quizz/${currentInfoUser.id}`, responses)
+        .put(`${process.env.REACT_APP_BDD}/quizz/${currentInfoUser.id}`, responses)
         .then((response) => {
         })
         .catch((error) => {
@@ -278,7 +281,7 @@ export default function Quizz() {
           Fk_id,
         };
         axios
-          .post(`https://veridisquohlk.herokuapp.com/quizz`, responses)
+          .post(`${process.env.REACT_APP_BDD}/quizz`, responses)
           .then((response) => {
           })
           .catch((error) => {

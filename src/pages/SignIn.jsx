@@ -39,6 +39,7 @@ function Copyright(props) {
 }
 
 const theme = createTheme();
+require('dotenv').config();
 
 export default function SignIn() {
   const { setCurrentInfoUser } = useContext(InfoUserContext);
@@ -63,7 +64,7 @@ export default function SignIn() {
 
   function handleClickSignIn() {
     axios
-      .get('https://veridisquohlk.herokuapp.com/users') // requête de la page
+      .get(`${process.env.REACT_APP_BDD}/users`) // requête de la page
       .then((res) => {
         // permet de transmettre à items la réponse de l'API grâce à "setState"
         setUsers(res.data);
@@ -89,7 +90,7 @@ export default function SignIn() {
   useEffect(() => {
     if (connexion) {
       axios
-        .get(`https://veridisquohlk.herokuapp.com/users/${id}`) // requête de la page
+        .get(`${process.env.REACT_APP_BDD}/users/${id}`) // requête de la page
         .then((res) => {
           // permet de transmettre à items la réponse de l'API grâce à "setState"
           setCurrentInfoUser(res.data);
