@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import axios from 'axios';
+import axios from "axios";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -11,10 +11,11 @@ import Player from "../Player/Player";
 import InfoUserContext from "../../contexts/InfoUserContext";
 import { grey } from "@mui/material/colors";
 
-require('dotenv').config();
+require("dotenv").config();
 
 export default function Quizz() {
-  const { currentInfoUser, reponseBdd, setReponseBdd } = useContext(InfoUserContext);
+  const { currentInfoUser, reponseBdd, setReponseBdd } =
+    useContext(InfoUserContext);
   const [playlist, setPlaylist] = useState("");
   const [display, setDisplay] = useState(false);
   const [value1, setValue1] = useState(false);
@@ -32,115 +33,108 @@ export default function Quizz() {
 
   useEffect(() => {
     axios
-        .get(`${process.env.REACT_APP_BDD}/users/${currentInfoUser.id}`)
-        .then((response) => {
-          setReponseBdd(response.data);
-        })
-        .catch((error) => {
-        });
+      .get(`${process.env.REACT_APP_BDD}/users/${currentInfoUser.id}`)
+      .then((response) => {
+        setReponseBdd(response.data);
+      })
+      .catch((error) => {});
   }, []);
 
   useEffect(() => {
-    if(reponseBdd)
-    {
+    if (reponseBdd) {
       i = true;
-      if(reponseBdd.R1 === 1)
-      {
+      if (reponseBdd.R1 === 1) {
         setValue1(true);
         setResponse1("q1t");
       } else {
         setValue1(false);
         setResponse1("q1f");
       }
-      if(reponseBdd.R2 === 1)
-      {
+      if (reponseBdd.R2 === 1) {
         setValue2(true);
         setResponse2("q2t");
       } else {
         setValue2(false);
         setResponse2("q2f");
       }
-      if(reponseBdd.R3 === 1)
-      {
+      if (reponseBdd.R3 === 1) {
         setValue3(true);
         setResponse3("q3t");
       } else {
         setValue3(false);
         setResponse3("q3f");
       }
-      if(reponseBdd.R4 === 1)
-      {
+      if (reponseBdd.R4 === 1) {
         setValue4(true);
         setResponse4("q4t");
       } else {
         setValue4(false);
         setResponse4("q4f");
       }
-    setPlaylist("1290316405");
-    setDisplay(true);
-    if (!value1 && !value2 && !value3 && value4) {
-    // Amour
-    setPlaylist("2809170204");
-    setDisplay(true);
-  } else if (!value1 && !value2 && value3 && !value4) {
-    // Nouveauté
-    setPlaylist("9550297062");
-    setDisplay(true);
-  } else if (!value1 && !value2 && value3 && value4) {
-    // Au coin du feu
-    setPlaylist("1083721131");
-    setDisplay(true);
-  } else if (!value1 && value2 && !value3 && !value4) {
-    // Sport
-    setPlaylist("1154685481");
-    setDisplay(true);
-  } else if (!value1 && value2 && !value3 && value4) {
-    // Feel good
-    setPlaylist("1203212111");
-    setDisplay(true);
-  } else if (!value1 && value2 && value3 && !value4) {
-    // Essentiels
-    setPlaylist("8453457822");
-    setDisplay(true);
-  } else if (!value1 && value2 && value3 && value4) {
-    // Concentration
-    setPlaylist("2269069702");
-    setDisplay(true);
-  } else if (value1 && !value2 && !value3 && !value4) {
-    // Soirée
-    setPlaylist("1061059991");
-    setDisplay(true);
-  } else if (value1 && !value2 && !value3 && value4) {
-    // Fete noel
-    setPlaylist("2474689942");
-    setDisplay(true);
-  } else if (value1 && !value2 && value3 && !value4) {
-    // Actu rap
-    setPlaylist("1071669561");
-    setDisplay(true);
-  } else if (value1 && !value2 && value3 && value4) {
-    // Chill & Relax summer electro
-    setPlaylist("914651125");
-    setDisplay(true);
-  } else if (value1 && value2 && !value3 && !value4) {
-    // Running sport
-    setPlaylist("7689476082");
-    setDisplay(true);
-  } else if (value1 && value2 && !value3 && value4) {
-    // live rock
-    setPlaylist("9694017462");
-    setDisplay(true);
-  } else if (value1 && value2 && value3 && !value4) {
-    // hits de l'été
-    setPlaylist("932386265");
-    setDisplay(true);
-  } else {
-    // best of
-    setPlaylist("9666268482");
-    setDisplay(true);
-  }  
-}else if(i)
-{
+      setPlaylist("1290316405");
+      setDisplay(true);
+      if (!value1 && !value2 && !value3 && value4) {
+        // Amour
+        setPlaylist("2809170204");
+        setDisplay(true);
+      } else if (!value1 && !value2 && value3 && !value4) {
+        // Nouveauté
+        setPlaylist("9550297062");
+        setDisplay(true);
+      } else if (!value1 && !value2 && value3 && value4) {
+        // Au coin du feu
+        setPlaylist("1083721131");
+        setDisplay(true);
+      } else if (!value1 && value2 && !value3 && !value4) {
+        // Sport
+        setPlaylist("1154685481");
+        setDisplay(true);
+      } else if (!value1 && value2 && !value3 && value4) {
+        // Feel good
+        setPlaylist("1203212111");
+        setDisplay(true);
+      } else if (!value1 && value2 && value3 && !value4) {
+        // Essentiels
+        setPlaylist("8453457822");
+        setDisplay(true);
+      } else if (!value1 && value2 && value3 && value4) {
+        // Concentration
+        setPlaylist("2269069702");
+        setDisplay(true);
+      } else if (value1 && !value2 && !value3 && !value4) {
+        // Soirée
+        setPlaylist("1061059991");
+        setDisplay(true);
+      } else if (value1 && !value2 && !value3 && value4) {
+        // Fete noel
+        setPlaylist("2474689942");
+        setDisplay(true);
+      } else if (value1 && !value2 && value3 && !value4) {
+        // Actu rap
+        setPlaylist("1071669561");
+        setDisplay(true);
+      } else if (value1 && !value2 && value3 && value4) {
+        // Chill & Relax summer electro
+        setPlaylist("914651125");
+        setDisplay(true);
+      } else if (value1 && value2 && !value3 && !value4) {
+        // Running sport
+        setPlaylist("7689476082");
+        setDisplay(true);
+      } else if (value1 && value2 && !value3 && value4) {
+        // live rock
+        setPlaylist("9694017462");
+        setDisplay(true);
+      } else if (value1 && value2 && value3 && !value4) {
+        // hits de l'été
+        setPlaylist("932386265");
+        setDisplay(true);
+      } else {
+        // best of
+        setPlaylist("9666268482");
+        setDisplay(true);
+      }
+    } else if (i) {
       setDisplay(false);
       setValue1(false);
       setResponse1("q1f");
@@ -150,8 +144,8 @@ export default function Quizz() {
       setResponse3("q3f");
       setValue4(false);
       setResponse4("q4f");
-  }
-  }, [reponseBdd])
+    }
+  }, [reponseBdd]);
 
   const handleRadioChange1 = (event) => {
     if (event.target.value === "q1t") {
@@ -255,8 +249,7 @@ export default function Quizz() {
       setDisplay(true);
     }
     const Fk_id = currentInfoUser.id;
-    if(reponseBdd)
-    {
+    if (reponseBdd) {
       const responses = {
         value1,
         value2,
@@ -264,15 +257,14 @@ export default function Quizz() {
         value4,
       };
       axios
-        .put(`${process.env.REACT_APP_BDD}/quizz/${currentInfoUser.id}`, responses)
-        .then((response) => {
-        })
-        .catch((error) => {
-        });
-    } else 
-    {
-      if(currentInfoUser.username)
-      {
+        .put(
+          `${process.env.REACT_APP_BDD}/quizz/${currentInfoUser.id}`,
+          responses
+        )
+        .then((response) => {})
+        .catch((error) => {});
+    } else {
+      if (currentInfoUser.username) {
         const responses = {
           value1,
           value2,
@@ -282,12 +274,10 @@ export default function Quizz() {
         };
         axios
           .post(`${process.env.REACT_APP_BDD}/quizz`, responses)
-          .then((response) => {
-          })
-          .catch((error) => {
-          });
+          .then((response) => {})
+          .catch((error) => {});
+      }
     }
-  }
 
     // if (value1 === "q1t") {
     //   setHelperText("You got it!");
@@ -302,7 +292,14 @@ export default function Quizz() {
     <>
       <form onSubmit={handleSubmit} style={{ paddingLeft: "78px" }}>
         <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-          <FormLabel component="legend">Aimez-vous les fêtes ?</FormLabel>
+          <FormLabel
+            component="legend"
+            sx={{
+              color: grey[500],
+            }}
+          >
+            Aimez-vous les fêtes ?
+          </FormLabel>
           <RadioGroup
             aria-label="q1"
             name="q1"
@@ -333,7 +330,14 @@ export default function Quizz() {
             />
           </RadioGroup>
 
-          <FormLabel component="legend">Etes-vous sportif ?</FormLabel>
+          <FormLabel
+            component="legend"
+            sx={{
+              color: grey[500],
+            }}
+          >
+            Etes-vous sportif ?
+          </FormLabel>
           <RadioGroup
             aria-label="q2"
             name="q2"
@@ -364,7 +368,14 @@ export default function Quizz() {
             />
           </RadioGroup>
 
-          <FormLabel component="legend">Aimez-vous les nouveautés ?</FormLabel>
+          <FormLabel
+            component="legend"
+            sx={{
+              color: grey[500],
+            }}
+          >
+            Aimez-vous les nouveautés ?
+          </FormLabel>
           <RadioGroup
             aria-label="q3"
             name="q3"
@@ -395,7 +406,14 @@ export default function Quizz() {
             />
           </RadioGroup>
 
-          <FormLabel component="legend">Êtes-vous sentimentale ?</FormLabel>
+          <FormLabel
+            component="legend"
+            sx={{
+              color: grey[500],
+            }}
+          >
+            Êtes-vous sentimentale ?
+          </FormLabel>
           <RadioGroup
             aria-label="q4"
             name="q4"

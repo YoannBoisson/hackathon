@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import Grid from "@mui/material/Grid";
 import { useSelector, useDispatch } from "react-redux";
 import { apiGetChartPlaylist } from "../api/apiChartPlaylist";
@@ -12,11 +12,14 @@ export default function CardPlaylist() {
     dispatch(apiGetChartPlaylist());
   }, [dispatch]);
 
-
   return (
-    <Grid container gap={10} sx={{pl: 27}}>
+    <Grid
+      container
+      spacing={1}
+      sx={{ display: "flex", justifyContent: "center", pl: 5}}
+    >
       {chartPlaylist.top.map((element) => (
-        <Grid item xs={5}>
+        <Grid item xs={9} md={5} lg={5}>
           <Cards {...element} />
         </Grid>
       ))}
