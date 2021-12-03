@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Oswald:400,300,700);
 
-
 .navire {
   background: url(https://res.cloudinary.com/dioieuprs/image/upload/v1471359656/navire_n02z6s.png)
     no-repeat;
@@ -17,7 +16,7 @@
 .mainMenuOverlay.open .navire {
   right: 70%;
   -webkit-transition: right 28s ease 1s;
-  transition: right 28s ease 1s;
+  transition: right 15s ease 1s;
 }
 /* ### main Menu Overlay */
 .mainMenuOverlay {
@@ -46,8 +45,8 @@
   border-radius: 80px;
   width: 62px;
   height: 62px;
-  position: absolute;
-  top: -12px;
+  position: fixed;
+  bottom: 0;
   left: 50%;
   margin: -31px 0 0 -31px;
   cursor: pointer;
@@ -335,4 +334,9 @@
   to {
     -moz-transform: translate(0, -0px);
   }
+}
+
+.div-wheel {
+  display: flex;
+  flex-direction: column;
 }

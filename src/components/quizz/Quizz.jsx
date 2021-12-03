@@ -11,6 +11,8 @@ import Player from "../Player/Player";
 import InfoUserContext from "../../contexts/InfoUserContext";
 import { grey } from "@mui/material/colors";
 
+require('dotenv').config();
+
 export default function Quizz() {
   const { currentInfoUser, reponseBdd, setReponseBdd } = useContext(InfoUserContext);
   const [playlist, setPlaylist] = useState("");
@@ -26,16 +28,15 @@ export default function Quizz() {
   const [helperText, setHelperText] = useState("");
 
   let i = false;
+  console.log(process.env.REACT_APP_BDD);
 
   useEffect(() => {
     axios
-        .get(`http://localhost:3005/quizz/${currentInfoUser.id}`)
+        .get(`${process.env.REACT_APP_BDD}/users/${currentInfoUser.id}`)
         .then((response) => {
-          console.log(response.data);
           setReponseBdd(response.data);
         })
         .catch((error) => {
-          console.log(error);
         });
   }, []);
 
@@ -263,12 +264,10 @@ export default function Quizz() {
         value4,
       };
       axios
-        .put(`http://localhost:3005/quizz/${currentInfoUser.id}`, responses)
+        .put(`${process.env.REACT_APP_BDD}/quizz/${currentInfoUser.id}`, responses)
         .then((response) => {
-          console.log(response);
         })
         .catch((error) => {
-          console.log(error);
         });
     } else 
     {
@@ -282,12 +281,10 @@ export default function Quizz() {
           Fk_id,
         };
         axios
-          .post(`http://localhost:3005/quizz`, responses)
+          .post(`${process.env.REACT_APP_BDD}/quizz`, responses)
           .then((response) => {
-            console.log(response);
           })
           .catch((error) => {
-            console.log(error);
           });
     }
   }

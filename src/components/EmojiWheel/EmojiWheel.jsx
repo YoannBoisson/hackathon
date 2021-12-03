@@ -68,16 +68,10 @@ const EmojiWheel = () => {
           </div>
           <p className="toggleMenu floating">🎶</p>
         </div>
-      ) : (
-        <Button
-          onClick={() => {
-            setCurrentAffMusiqueHumeur(false);
-          }}
-        >
-          Retour au choix
-        </Button>
+      ) : ( null
       )}
       {currentAffMusiqueHumeur ? (
+        <div className="div-wheel">
         <iframe
           title="deezer-widget"
           src={`https://widget.deezer.com/widget/dark/playlist/${id}?tracklist=false`}
@@ -86,7 +80,15 @@ const EmojiWheel = () => {
           frameborder="0"
           allowtransparency="true"
           allow="encrypted-media; clipboard-write"
-        />
+        /> 
+        <Button className="button-wheel"
+          onClick={() => {
+            setCurrentAffMusiqueHumeur(false);
+          }}
+        >
+          Retour au choix
+        </Button>
+        </div>
       ) : null}
     </>
   );

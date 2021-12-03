@@ -18,7 +18,6 @@ function Navbar() {
 
   function menuBtnChange() {
     setnavOpen((prevNavOpen) => {
-      console.log(prevNavOpen);
       return prevNavOpen === "bx bx-menu" ? "bx bx-disc" : "bx bx-menu";
     });
 
