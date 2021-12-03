@@ -5,8 +5,8 @@
 
 .check-theme {
   position: fixed;
-  left: 90vw;
-  top: 10vh;
+  right: 7vw;
+  top: 4vh;
   visibility: hidden;
   display: block;
   padding: 0;

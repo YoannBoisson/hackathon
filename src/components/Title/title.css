@@ -12,6 +12,7 @@
     text-align: center;
     perspective: 1000px;
 }
+
 h1 {
     font-family: Playfair Display;
     transform-style: preserve-3d;
@@ -20,12 +21,12 @@ h1 {
     color: #333;
     font-weight: 100;
     letter-spacing: 10px;
-    font-size: 100px;
+    font-size: 8vw;
     cursor: pointer;
     z-index: 10;
     position: relative;
-    /* background: rgba(255, 166, 0, 0.596); */
 }
+
 h1 span {
     pointer-events: none;
 }

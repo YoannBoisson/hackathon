@@ -36,8 +36,8 @@ function HomePage() {
         <Grid item xs={12} sx={{ textAlign: "center" }}>
           <Searchbar />
         </Grid>
-        <Grid item xs={12} sx={{ textAlign: "center", height: 100 }} />
-        <Grid item xs={12} sx={{ textAlign: "center" }}>
+        <Grid item xs={12} sx={{ textAlign: "center", height: 100 }}/>
+        <Grid item xs={12} sx={{ textAlign: "center", mt:12}}>
           <FormControl component="fieldset">
             <FormLabel
               component="legend"

@@ -77,7 +77,7 @@ const Games = () => {
             <br />
           </>
         )}
-        Nombre de clicks : {clicks} &nbsp;&nbsp;&nbsp; Nombre de paires trouvées : {foundPairs.length / 2}
+        <p>Nombre de clicks : {clicks} &nbsp;&nbsp;&nbsp;</p> <p>Nombre de paires trouvées : {foundPairs.length / 2}</p>
       </div>
     </div>
   );

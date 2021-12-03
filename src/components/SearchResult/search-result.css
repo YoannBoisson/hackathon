@@ -40,3 +40,10 @@
   margin: 5px;
 }
 
+@media screen and (max-width:500px){
+  #hint-container {
+    width: 350px;
+    flex-direction: column;
+    height: 230px;
+  }
+}

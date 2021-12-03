@@ -1,11 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+
+}
+
 .board {
-  position: relative;
-  top: 30px;
-  width: calc(100vh - 240px);
-  max-width: calc(100vw - 40px);
+  position: absolute;
+  top: 150px;
+  left: translate(-50%, 50%);
+  width: calc(100vh - 300px);
+  max-width: 60%;
   display: grid;
   grid-gap: 12px;
-  margin: auto;
+  margin: auto auto;
   grid-template-columns: repeat(6, 1fr);
 }
 
@@ -47,9 +54,9 @@
 }
 
 .stats {
-  width: 400px;
+  width: 60vw;
   margin: 0 auto;
   text-align: center;
   padding: 20px 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
