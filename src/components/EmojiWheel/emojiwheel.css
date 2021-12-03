@@ -45,10 +45,10 @@
   border-radius: 80px;
   width: 62px;
   height: 62px;
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  top: -30px;
   left: 50%;
-  margin: -31px 0 0 -31px;
+  margin: -31px -20px 0 -31px;
   cursor: pointer;
   font-size: 24px;
   color: #fff;
