@@ -165,6 +165,7 @@ export default function SignIn() {
                 onChange={(e) => {
                   setUsername(e.target.value);
                 }}
+                sx={{width: '75%', ml: 8}}
               />
               <TextField
                 margin="normal"
@@ -178,29 +179,31 @@ export default function SignIn() {
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
+                sx={{width: '75%', ml: 8}}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
+                sx={{width: '75%', ml: 8}}
               />
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 3, mb: 2, ml:10, width: 200 }}
                 onClick={() => {
                   handleClickSignIn();
                 }}
               >
                 Sign In
               </Button>
-              <Grid container>
-                <Grid item xs>
+              <Grid container sx={{textAlign: 'center'}}>
+                <Grid item xs={12}>
                   <Link href="/#" variant="body2">
                     Forgot password?
                   </Link>
                 </Grid>
-                <Grid item>
+                <Grid item xs={12}>
                   <Link href="/#" variant="body2">
                     Dont have an account? Sign Up
                   </Link>
@@ -208,7 +211,6 @@ export default function SignIn() {
               </Grid>
             </Box>
           </Box>
-          <Copyright sx={{ mt: 8, mb: 4 }} />
         </Container>
       </ThemeProvider>
     </div>

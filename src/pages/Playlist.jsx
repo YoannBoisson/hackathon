@@ -25,7 +25,7 @@ export default function Playlist() {
       <Grid item xs={12} sx={{ mb: 5 }}>
         <h2>Bienvenue sur la page des playlists</h2>
       </Grid>
-      <Grid item xs={8}>
+      <Grid item xs={12}>
         <CardPlaylist />
       </Grid>
     </Grid>

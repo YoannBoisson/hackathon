@@ -31,7 +31,7 @@ function HomePage() {
   }
 
   return (
-    <Box sx={{ flexGrow: 1}} style={theme}>
+    <Box sx={{ flexGrow: 1 }} style={theme}>
       <Grid container spacing={2}>
         <Grid item xs={12} sx={{ textAlign: "center" }}>
           <Searchbar />
@@ -39,7 +39,14 @@ function HomePage() {
         <Grid item xs={12} sx={{ textAlign: "center", height: 100 }}/>
         <Grid item xs={12} sx={{ textAlign: "center", mt:12}}>
           <FormControl component="fieldset">
-            <FormLabel component="legend">Choose</FormLabel>
+            <FormLabel
+              component="legend"
+              sx={{
+                color: grey[500],
+              }}
+            >
+              Choose
+            </FormLabel>
             <RadioGroup
               row
               aria-label="choose"
